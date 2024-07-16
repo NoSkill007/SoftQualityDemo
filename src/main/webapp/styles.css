@@ -1,0 +1,325 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #002d54;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+}
+.logo {
+  flex: 1;
+  text-align: center;
+}
+.logo img {
+  vertical-align: middle;
+  width: 200px;
+}
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li {
+  margin-right: 20px;
+}
+.nav-links li:last-child {
+  margin-right: 0;
+}
+.nav-link {
+  display: block;
+  padding: 10px 20px;
+  background-color: #e4a92f;
+  color: black;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.nav-link:hover {
+  background-color: #dea026;
+}
+
+.np-links {
+  display: block;
+  padding: 10px 20px;
+  background-color: #e4a92f;
+  color: black;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.np-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.np-links li:last-child {
+  margin-right: 0;
+}
+
+#SignUp {
+  display: block;
+  padding: 10px 20px;
+  background-color: #f6e3ba;
+  color: black;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+#SignUp:hover {
+  background-color: #e1cfac;
+}
+
+#LogIn {
+  display: block;
+  padding: 10px 20px;
+  background-color: #e4a92f;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+#LogIn:hover {
+  background-color: #dea026;
+}
+
+.eslogan {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  flex: 1;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image img {
+  max-width: 80%;
+  height: 80%;
+}
+
+.supply {
+  font-size: 80px;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  text-align: left;
+  letter-spacing: 0.4px;
+}
+
+.tagline {
+  text-wrap: wrap;
+  font-size: 80px;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  font-style: italic;
+  text-overflow: ellipsis;
+  letter-spacing: 2px;
+  line-height: 120px;
+}
+
+.Enviar_Paquete {
+  display: block;
+  padding: 10px 20px;
+  background-color: #e4a92f;
+  color: black;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 20px 0; /* Margen superior, sin centrar automáticamente */
+  width: auto; /* Asegura que el ancho sea solo tan grande como el contenido + padding */
+  align-self: flex-start; /* Alinea el botón a la izquierda */
+}
+
+.Enviar_Paquete:hover {
+  background-color: #dea026;
+}
+
+/* css de las cartas*/
+.Cartas_Planes {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  color: #ffffff;
+}
+#card-section .container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch; /* asegura que todas las cartes sea del mismo tamano*/
+  flex-wrap: wrap;
+}
+
+#card-section .card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease; /* Suaviza la transición de la transformación */
+}
+
+#card-section .card:hover {
+  transform: scale(1.02); /* Aumenta el tamaño de la carta en un 5% */
+}
+
+#card-section .icon img {
+  width: 140px;
+  margin-bottom: 10px;
+}
+
+#card-section h2 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+#card-section h1 {
+  color: #002366;
+  font-size: 3em;
+  margin: 10px 0;
+}
+
+#card-section p {
+  color: #666;
+  margin: 5px 0;
+}
+
+#card-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+#card-section li {
+  margin: 10px 0;
+  color: #666;
+}
+
+#card-section button {
+  background-color: #002366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+#card-section button:hover {
+  background-color: #001744;
+}
+
+/* css de la seccion de preguntas frecuentes */
+.Preguntas_Fre {
+  color: #ffffff;
+}
+
+.txt_General {
+  color: #ffffff;
+}
+
+.faq-container {
+  width: 75%;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq {
+  padding: 15px;
+  border-left: 4px solid #e4a92f;
+  list-style: none;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.faq li {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.faq p {
+  margin-left: 20px;
+  font-size: 0.9em;
+}
+
+/* css de la seccion de contacto */
+
+.Grupo {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+}
+.container_integrantes {
+  margin: 40px; /* Se ajusta independientemente del body */
+  padding: 20px; /* Padding externo adicional */
+  background: #fff;
+  border-radius: 8px;
+}
+
+.member {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.member img {
+  border-radius: 50%;
+  margin-right: 20px;
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+}
+
+/* css de footer*/
+.footer-container {
+  background-color: #002d54;
+  color: white;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.footer-section {
+  margin: 0 50px;
+}
+.footer-heading {
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 5px;
+}
+.branch-schedule,
+.contact-info {
+  list-style-type: none;
+  padding: 0;
+}
+.schedule-item,
+.contact-item {
+  margin-bottom: 5px;
+}
+.social-icon {
+  text-align: left;
+  margin: 0 5px;
+}
+.social-icon img {
+  width: 25px;
+  height: 25px;
+}
+
+/*css pantalla cliente*/
+

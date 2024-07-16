@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Inicio Recepcionista</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        body {
+            font-family: 'K2D', sans-serif;
+        }
+
+        .opciones {
+            background-color: #E4A92F;
+            padding: 10px;
+            color: white;
+            height: 25px;
+            border-radius: 25px;
+            text-align: center;
+            cursor: pointer;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .opciones:hover {
+            background-color: #9fc4e6;
+            color: rgb(255, 255, 255);
+        }
+
+        #encabezado {
+            background-color: #002D54;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            justify-content: flex-start;
+        }
+
+        #logo{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .iconos {
+            margin-left: auto;
+            display: flex;
+            gap: 15px;
+        }
+
+        .iconos i {
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .iconos i:hover {
+            color: #E4A92F;
+        }
+
+        .footer-container {
+            background-color: #002d54;
+            color: white;
+            padding: 20px 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .footer-section {
+            margin: 0 50px;
+        }
+        .footer-heading {
+            border-bottom: 1px solid #aaa;
+            padding-bottom: 5px;
+        }
+        .branch-schedule,
+        .contact-info {
+            list-style-type: none;
+            padding: 0;
+        }
+        .schedule-item,
+        .contact-item {
+            margin-bottom: 5px;
+        }
+        .social-icon {
+            text-align: left;
+            margin: 0 5px;
+        }
+        .social-icon img {
+            width: 25px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <section id="encabezado">
+        <div id="logo">
+            <img src="img/Logo.png" width="65" height="40">
+        </div>
+        <div class="iconos">
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-user"></i>
+            <i class="fas fa-cog"></i>
+        </div>
+    </section>
+    
+    <section>
+        <div>
+            <h2>Solicitudes de envio</h2>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Número de solicitud</th>
+                    <th>Fecha de envío</th>
+                    <th>Detalles de envío</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>2024-05-01</td>
+                    <!--Solo este tiene el hipervinculo-->
+                    <td><a href="ver_detalles.html">Ver detalles</a></td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>2024-05-02</td>
+                    <td><a href="detalles_solicitud.html?solicitud=002">Ver detalles</a></td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>2024-05-03</td>
+                    <td><a href="detalles_solicitud.html?solicitud=003">Ver detalles</a></td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>2024-05-04</td>
+                    <td><a href="detalles_solicitud.html?solicitud=004">Ver detalles</a></td>
+                </tr>
+                <tr>
+                    <td>005</td>
+                    <td>2024-05-05</td>
+                    <td><a href="detalles_solicitud.html?solicitud=005">Ver detalles</a></td>
+                </tr>
+                <tr>
+                    <td>006</td>
+                    <td>2024-05-06</td>
+                    <td><a href="detalles_solicitud.html?solicitud=006">Ver detalles</a></td>
+                </tr>
+                <tr>
+                    <td>007</td>
+                    <td>2024-05-07</td>
+                    <td><a href="detalles_solicitud.html?solicitud=007">Ver detalles</a></td>
+                </tr>
+                <tr>
+                    <td>008</td>
+                    <td>2024-05-08</td>
+                    <td><a href="detalles_solicitud.html?solicitud=008">Ver detalles</a></td>
+                </tr>
+                <tr>
+                    <td>009</td>
+                    <td>2024-05-09</td>
+                    <td><a href="detalles_solicitud.html?solicitud=009">Ver detalles</a></td>
+                </tr>
+                <tr>
+                    <td>010</td>
+                    <td>2024-05-10</td>
+                    <td><a href="detalles_solicitud.html?solicitud=010">Ver detalles</a></td>
+                </tr>
+                <tr>
+                    <td>011</td>
+                    <td>2024-05-11</td>
+                    <td><a href="detalles_solicitud.html?solicitud=011">Ver detalles</a></td>
+                </tr>
+                <tr>
+                    <td>012</td>
+                    <td>2024-05-12</td>
+                    <td><a href="detalles_solicitud.html?solicitud=012">Ver detalles</a></td>
+                </tr>
+                <tr>
+                    <td>013</td>
+                    <td>2024-05-13</td>
+                    <td><a href="detalles_solicitud.html?solicitud=013">Ver detalles</a></td>
+                </tr>   
+            </tbody>
+        </table>
+    </section>
+
+   <!-- Footer con la información de la empresa -->
+    <footer class="footer-container">
+        <div class="footer-section">
+            <h2 class="footer-heading">SUCURSALES</h2>
+            <ul class="branch-schedule">
+                <li class="schedule-item">El dorado: lunes a viernes: 8:00 am - 8:00 pm</li>
+                <li class="schedule-item">sábado: 8:00 am - 6:00 pm</li>
+                <li class="schedule-item">Nuevo tocumen: lunes a viernes: 9:30 am - 5:00 pm</li>
+                <li class="schedule-item">sábado: 10:00 am - 4:00 pm</li>
+                <li class="schedule-item">Arraiján: lunes a viernes: 9:30 am - 6:00 pm</li>
+                <li class="schedule-item">sábado: 9:30 am - 4:00 pm</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2 class="footer-heading">CONTACTO</h2>
+            <ul class="contact-info">
+                <li class="contact-item">El dorado: XXXX-XXXX</li>
+                <li class="contact-item">Arraijan: XXXX-XXXX</li>
+                <li class="contact-item">Nuevo tocumen: XXXX-XXXX</li>
+            </ul>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><img src="img/tik_tok@512px.png" alt="TikTok"></a>
+                <a href="#" class="social-icon"><img src="img/linkedin@512px.png" alt="Linkedin"></a>
+                <a href="#" class="social-icon"><img src="img/instagram@512px.png" alt="Instagram"></a>
+                <a href="#" class="social-icon"><img src="img/facebook@512px.png" alt="Facebook"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

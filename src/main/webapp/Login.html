@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Solutions Login</title>
+    <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a href="Index.html">
+            <img src="img/Logo.png" alt="Supply Solutions">
+        </a>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <form class="login-form" action="submit_login.php" method="post"> <h2 class="bienvenido">Bienvenido!</h2>
+            <p>Seleccione el tipo de Usuario</p>
+            <div class="user-type">
+                <div class="Cliente">
+                    <input type="radio" id="cliente" name="user-type" value="cliente">
+                    <label for="cliente">Cliente</label>
+                </div>
+                <div class="colaborador">
+                    <input type="radio" id="colaborador" name="user-type" value="colaborador">
+                    <label for="colaborador">Colaborador</label>
+                </div>
+            </div>
+            <input type="email" placeholder="Usuario@gmail.com" class="input-field" required>
+            <input type="password" placeholder="Contraseña" class="input-field" required>
+            <p class="forgot-password"><a href="#">Olvidé mi contraseña</a></p>
+            <input type="submit" value="Iniciar Sesión" class="sign-in-btn"> <p class="register-link">¿Aún no estás registrado? <a href="#">Regístrate</a></p>
+        </form>
+    </div>
+</main>
+
+<footer class="footer-container">
+    <div class="footer-section">
+        <h2 class="footer-heading">SUCURSALES</h2>
+        <ul class="branch-schedule">
+            <li class="schedule-item">El dorado: lunes a viernes: 8:00 am - 8:00 pm</li>
+            <li class="schedule-item">sábado: 8:00 am - 6:00 pm</li>
+            <li class="schedule-item">Nuevo tocumen: lunes a viernes: 9:30 am - 5:00 pm</li>
+            <li class="schedule-item">sábado: 10:00 am - 4:00 pm</li>
+            <li class="schedule-item">Arraiján: lunes a viernes: 9:30 am - 6:00 pm</li>
+            <li class="schedule-item">sábado: 9:30 am - 4:00 pm</li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h2 class="footer-heading">CONTACTO</h2>
+        <ul class="contact-info">
+            <li class="contact-item">El dorado: XXXX-XXXX</li>
+            <li class="contact-item">Arraijan: XXXX-XXXX</li>
+            <li class="contact-item">Nuevo tocumen: XXXX-XXXX</li>
+        </ul>
+        <div class="social-icons">
+            <a href="#" class="social-icon"><img src="img/tik_tok@512px.png" alt="TikTok"></a>
+            <a href="#" class="social-icon"><img src="img/linkedin@512px.png" alt="Linkedin"></a>
+            <a href="#" class="social-icon"><img src="img/instagram@512px.png" alt="Instagram"></a>
+            <a href="#" class="social-icon"><img src="img/facebook@512px.png" alt="Facebook"></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
