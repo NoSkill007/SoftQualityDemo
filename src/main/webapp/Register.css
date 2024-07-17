@@ -114,26 +114,32 @@ body {
     display: flex;
     justify-content: space-around;
 }
+
 .footer-section {
     margin: 0 50px;
 }
+
 .footer-heading {
     border-bottom: 1px solid #aaa;
     padding-bottom: 5px;
 }
+
 .branch-schedule,
 .contact-info {
     list-style-type: none;
     padding: 0;
 }
+
 .schedule-item,
 .contact-item {
     margin-bottom: 5px;
 }
+
 .social-icon {
     text-align: left;
     margin: 0 5px;
 }
+
 .social-icon img {
     width: 25px;
     height: 25px;

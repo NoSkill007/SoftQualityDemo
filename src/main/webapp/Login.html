@@ -17,22 +17,24 @@
 
 <main>
     <div class="container">
-        <form class="login-form" action="submit_login.php" method="post"> <h2 class="bienvenido">Bienvenido!</h2>
+        <form class="login-form" action="Login.jsp" method="post">
+            <h2 class="bienvenido">Bienvenido!</h2>
             <p>Seleccione el tipo de Usuario</p>
             <div class="user-type">
                 <div class="Cliente">
-                    <input type="radio" id="cliente" name="user-type" value="cliente">
+                    <input type="radio" id="cliente" name="user-type" value="cliente" required>
                     <label for="cliente">Cliente</label>
                 </div>
                 <div class="colaborador">
-                    <input type="radio" id="colaborador" name="user-type" value="colaborador">
+                    <input type="radio" id="colaborador" name="user-type" value="colaborador" required>
                     <label for="colaborador">Colaborador</label>
                 </div>
             </div>
-            <input type="email" placeholder="Usuario@gmail.com" class="input-field" required>
-            <input type="password" placeholder="Contraseña" class="input-field" required>
-            <p class="forgot-password"><a href="#">Olvidé mi contraseña</a></p>
-            <input type="submit" value="Iniciar Sesión" class="sign-in-btn"> <p class="register-link">¿Aún no estás registrado? <a href="#">Regístrate</a></p>
+            <input type="email" name="email" placeholder="Usuario@gmail.com" class="input-field" required>
+            <input type="password" name="password" placeholder="Contraseña" class="input-field" required>
+            <p class="forgot-password"><a href="forgot_password.html">Olvidé mi contraseña</a></p>
+            <input type="submit" value="Iniciar Sesión" class="sign-in-btn">
+            <p class="register-link">¿Aún no estás registrado? <a href="Register.html">Regístrate</a></p>
         </form>
     </div>
 </main>

@@ -12,6 +12,7 @@
             background-color: #002B5B;
             color: white;
         }
+
         .header {
             display: flex;
             justify-content: space-between;
@@ -19,13 +20,16 @@
             padding: 20px;
             background-color: #002B5B;
         }
+
         .header img {
-            height: 50px;
+            height: 80px;
         }
+
         .header .buttons {
             display: flex;
             gap: 10px;
         }
+
         .header .buttons button {
             background-color: #FDBA21;
             border: none;
@@ -34,26 +38,34 @@
             cursor: pointer;
             border-radius: 5px;
         }
+
         .main {
             padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+
         .main .text {
             text-align: center;
             margin-bottom: 50px;
         }
+
         .main .text h1 {
             font-size: 48px;
             margin: 0;
         }
+
         .main .text p {
             font-size: 24px;
             margin: 10px 0 20px;
         }
+
         .form-container {
             display: flex;
             justify-content: space-between;
             gap: 20px;
         }
+
         .form-section {
             background-color: #004080;
             padding: 20px;
@@ -61,16 +73,21 @@
             flex: 1;
             color: white;
         }
+
         .form-section h2 {
             text-align: center;
+            margin-bottom: 20px;
         }
+
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
+
         .form-group label {
             display: block;
             margin-bottom: 5px;
         }
+
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -78,12 +95,15 @@
             border: none;
             border-radius: 5px;
             font-size: 16px;
+            box-sizing: border-box;
         }
+
         .form-group input[type="file"] {
             background-color: #002B5B;
             color: white;
             border: 1px solid #FDBA21;
         }
+
         .form-section button {
             display: block;
             width: 100%;
@@ -99,39 +119,40 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="img/Logo.png" alt="eSupply Solutions">
-        <div class="buttons">
-            <button onclick="window.location.href='Preguntas_Frecuentes.html'">Preguntas Frecuentes</button>
-            <button onclick="window.location.href='Integrantes.html'">Contacto</button>
-        </div>
+<div class="header">
+    <img src="img/Logo.png" alt="eSupply Solutions">
+    <div class="buttons">
+        <button onclick="window.location.href='Preguntas_Frecuentes.html'">Preguntas Frecuentes</button>
+        <button onclick="window.location.href='Integrantes.html'">Contacto</button>
     </div>
-    <div class="main">
-        <div class="text">
-            <h1>eSupply Solution</h1>
-            <p>haz la entrega más fácil que nunca</p>
-        </div>
+</div>
+<div class="main">
+    <div class="text">
+        <h1>eSupply Solution</h1>
+        <p>haz la entrega más fácil que nunca</p>
+    </div>
+    <form action="Solicitud_envio.jsp" method="post">
         <div class="form-container">
             <div class="form-section">
                 <h2>Información del remitente</h2>
                 <div class="form-group">
                     <label for="remitente-nombre">Nombre completo</label>
-                    <input type="text" id="remitente-nombre" name="remitente-nombre">
+                    <input type="text" id="remitente-nombre" name="remitente-nombre" required>
                 </div>
                 <div class="form-group">
                     <label for="remitente-cedula">Cédula</label>
-                    <input type="text" id="remitente-cedula" name="remitente-cedula">
+                    <input type="text" id="remitente-cedula" name="remitente-cedula" required>
                 </div>
                 <div class="form-group">
                     <label for="remitente-email">Correo Electrónico</label>
-                    <input type="email" id="remitente-email" name="remitente-email">
+                    <input type="email" id="remitente-email" name="remitente-email" required>
                 </div>
                 <div class="form-group">
                     <label for="remitente-telefono">Teléfono</label>
-                    <input type="tel" id="remitente-telefono" name="remitente-telefono">
+                    <input type="tel" id="remitente-telefono" name="remitente-telefono" required>
                 </div>
                 <div class="form-group">
-                    <label for="remitente-imagen">Adjuntar imagen del paquete</label>
+                    <label for="remitente-imagen">Adjuntar imagen del paquete (opcional)</label>
                     <input type="file" id="remitente-imagen" name="remitente-imagen">
                 </div>
             </div>
@@ -139,46 +160,48 @@
                 <h2>Información del destinatario</h2>
                 <div class="form-group">
                     <label for="destinatario-nombre">Nombre completo</label>
-                    <input type="text" id="destinatario-nombre" name="destinatario-nombre">
+                    <input type="text" id="destinatario-nombre" name="destinatario-nombre" required>
                 </div>
                 <div class="form-group">
                     <label for="destinatario-cedula">Cédula</label>
-                    <input type="text" id="destinatario-cedula" name="destinatario-cedula">
+                    <input type="text" id="destinatario-cedula" name="destinatario-cedula" required>
                 </div>
                 <div class="form-group">
                     <label for="destinatario-email">Correo Electrónico</label>
-                    <input type="email" id="destinatario-email" name="destinatario-email">
+                    <input type="email" id="destinatario-email" name="destinatario-email" required>
                 </div>
                 <div class="form-group">
                     <label for="destinatario-telefono">Teléfono</label>
-                    <input type="tel" id="destinatario-telefono" name="destinatario-telefono">
+                    <input type="tel" id="destinatario-telefono" name="destinatario-telefono" required>
                 </div>
                 <div class="form-group">
                     <label for="destinatario-hora-retiro">Hora de retiro</label>
-                    <input type="time" id="destinatario-hora-retiro" name="destinatario-hora-retiro">
+                    <input type="time" id="destinatario-hora-retiro" name="destinatario-hora-retiro" required>
                 </div>
             </div>
             <div class="form-section">
                 <h2>Información del paquete</h2>
                 <div class="form-group">
                     <label for="paquete-descripcion">Descripción del paquete</label>
-                    <textarea id="paquete-descripcion" name="paquete-descripcion" rows="4"></textarea>
+                    <textarea id="paquete-descripcion" name="paquete-descripcion" rows="4" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="paquete-especificaciones">Especificaciones</label>
-                    <textarea id="paquete-especificaciones" name="paquete-especificaciones" rows="4"></textarea>
+                    <textarea id="paquete-especificaciones" name="paquete-especificaciones" rows="4"
+                              required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="paquete-direccion-retiro">Dirección de retiro</label>
-                    <input type="text" id="paquete-direccion-retiro" name="paquete-direccion-retiro">
+                    <input type="text" id="paquete-direccion-retiro" name="paquete-direccion-retiro" required>
                 </div>
                 <div class="form-group">
                     <label for="paquete-direccion-entrega">Dirección de entrega</label>
-                    <input type="text" id="paquete-direccion-entrega" name="paquete-direccion-entrega">
+                    <input type="text" id="paquete-direccion-entrega" name="paquete-direccion-entrega" required>
                 </div>
-                <button onclick="window.location.href='Paquete_envio.html'">Envía un paquete</button>
+                <button type="submit">Envía un paquete</button>
             </div>
         </div>
-    </div>
+    </form>
+</div>
 </body>
 </html>

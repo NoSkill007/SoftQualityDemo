@@ -15,16 +15,17 @@
     </div>
 </header>
 <div class="container">
-    <form class="login-form" action="register.php" method="post">
+    <form class="login-form" action="register.jsp" method="post">
         <h2 class="bienvenido">Bienvenido!</h2>
-        <input type="text" placeholder="Nombre" class="input-field" required>
-        <input type="text" placeholder="Apellido" class="input-field" required>
+        <input type="text" name="nombre" placeholder="Nombre" class="input-field" required>
+        <input type="text" name="apellido" placeholder="Apellido" class="input-field" required>
         <h4>Ingrese el correo electrónico</h4>
-        <input type="email" placeholder="Usuario@gmail.com" class="input-field" required>
+        <input type="email" name="correo" placeholder="Usuario@gmail.com" class="input-field" required>
         <h4>Ingrese la contraseña</h4>
-        <input type="password" placeholder="Contraseña" class="input-field" required>
+        <input type="password" name="contrasena" placeholder="Contraseña" class="input-field" required>
         <h4>Confirme la contraseña</h4>
-        <input type="password" placeholder="Confirmar Contraseña" class="input-field" required>
+        <input type="password" name="confirmarContrasena" placeholder="Confirmar Contraseña" class="input-field"
+               required>
         <input type="submit" value="Registrarse" class="sign-in-btn">
         <p class="register-link">¿Ya tienes una cuenta creada? <a href="Login.html">Iniciar Sesión</a></p>
     </form>
