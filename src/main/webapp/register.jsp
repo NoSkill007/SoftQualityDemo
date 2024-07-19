@@ -52,7 +52,7 @@
                             cs.setString(1, nombre);
                             cs.setString(2, apellido);
                             cs.setString(3, correo);
-                            cs.setString(4, contrasena);  // Guardar la contraseña tal cual
+                            cs.setString(4, contrasena);
 
                             cs.execute();
                             cs.close();

@@ -146,9 +146,9 @@ body {
     color: black;
     border-radius: 10px;
     text-decoration: none;
-    margin: 20px 0; /* Margen superior, sin centrar automáticamente */
-    width: auto; /* Asegura que el ancho sea solo tan grande como el contenido + padding */
-    align-self: flex-start; /* Alinea el botón a la izquierda */
+    margin: 20px 0;
+    width: auto;
+    align-self: flex-start;
 }
 
 .Enviar_Paquete:hover {
@@ -167,7 +167,7 @@ body {
     display: flex;
     gap: 20px;
     justify-content: center;
-    align-items: stretch; /* asegura que todas las cartes sea del mismo tamano*/
+    align-items: stretch;
     flex-wrap: wrap;
 }
 
@@ -178,11 +178,11 @@ body {
     width: 300px;
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease; /* Suaviza la transición de la transformación */
+    transition: transform 0.3s ease;
 }
 
 #card-section .card:hover {
-    transform: scale(1.02); /* Aumenta el tamaño de la carta en un 5% */
+    transform: scale(1.02);
 }
 
 #card-section .icon img {
@@ -275,8 +275,8 @@ body {
 }
 
 .container_integrantes {
-    margin: 40px; /* Se ajusta independientemente del body */
-    padding: 20px; /* Padding externo adicional */
+    margin: 40px;
+    padding: 20px;
     background: #fff;
     border-radius: 8px;
 }
@@ -294,8 +294,8 @@ body {
 .member img {
     border-radius: 50%;
     margin-right: 20px;
-    width: 100px; /* Adjust size as needed */
-    height: 100px; /* Adjust size as needed */
+    width: 100px;
+    height: 100px;
 }
 
 /* css de footer*/

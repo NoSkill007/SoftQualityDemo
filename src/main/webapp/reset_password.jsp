@@ -37,7 +37,6 @@
                         con = DriverManager.getConnection(
                                 "jdbc:oracle:thin:@localhost:1521:xe", "usuarioDB", "contrasenaDB");
 
-                        // Actualizar la contraseña en la tabla correspondiente
                         ps = con.prepareStatement("UPDATE usuarios SET contrasena = ? WHERE correo = ?");
                         ps.setString(1, newPassword);
                         ps.setString(2, correo);
