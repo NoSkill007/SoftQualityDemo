@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.SQLException" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +13,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Inicio Recepcionista</title>
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: 'K2D', sans-serif;
+            margin: 0;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .table-container {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
         }
 
         th, td {
@@ -27,8 +50,8 @@
             background-color: #f1f1f1;
         }
 
-        body {
-            font-family: 'K2D', sans-serif;
+        #solicitud_envio {
+            padding: 10px;
         }
 
         .opciones {
@@ -61,10 +84,9 @@
             justify-content: flex-start;
         }
 
-        #logo {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        #logo img {
+            width: 200px;
+            height: auto;
         }
 
         .iconos {
@@ -120,102 +142,89 @@
             width: 25px;
             height: 25px;
         }
+
     </style>
 </head>
 <body>
-<section id="encabezado">
+<header id="encabezado">
     <div id="logo">
-        <img src="img/Logo.png" width="65" height="40">
+        <img src="img/Logo.png" alt="Logo">
     </div>
     <div class="iconos">
         <i class="fas fa-bell"></i>
         <i class="fas fa-user"></i>
         <i class="fas fa-cog"></i>
     </div>
-</section>
+</header>
 
-<section>
-    <div>
-        <h2>Solicitudes de envio</h2>
-    </div>
-    <table>
-        <thead>
-        <tr>
-            <th>Número de solicitud</th>
-            <th>Fecha de envío</th>
-            <th>Detalles de envío</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>001</td>
-            <td>2024-05-01</td>
-            <!--Solo este tiene el hipervinculo-->
-            <td><a href="ver_detalles.html">Ver detalles</a></td>
-        </tr>
-        <tr>
-            <td>002</td>
-            <td>2024-05-02</td>
-            <td><a href="detalles_solicitud.html?solicitud=002">Ver detalles</a></td>
-        </tr>
-        <tr>
-            <td>003</td>
-            <td>2024-05-03</td>
-            <td><a href="detalles_solicitud.html?solicitud=003">Ver detalles</a></td>
-        </tr>
-        <tr>
-            <td>004</td>
-            <td>2024-05-04</td>
-            <td><a href="detalles_solicitud.html?solicitud=004">Ver detalles</a></td>
-        </tr>
-        <tr>
-            <td>005</td>
-            <td>2024-05-05</td>
-            <td><a href="detalles_solicitud.html?solicitud=005">Ver detalles</a></td>
-        </tr>
-        <tr>
-            <td>006</td>
-            <td>2024-05-06</td>
-            <td><a href="detalles_solicitud.html?solicitud=006">Ver detalles</a></td>
-        </tr>
-        <tr>
-            <td>007</td>
-            <td>2024-05-07</td>
-            <td><a href="detalles_solicitud.html?solicitud=007">Ver detalles</a></td>
-        </tr>
-        <tr>
-            <td>008</td>
-            <td>2024-05-08</td>
-            <td><a href="detalles_solicitud.html?solicitud=008">Ver detalles</a></td>
-        </tr>
-        <tr>
-            <td>009</td>
-            <td>2024-05-09</td>
-            <td><a href="detalles_solicitud.html?solicitud=009">Ver detalles</a></td>
-        </tr>
-        <tr>
-            <td>010</td>
-            <td>2024-05-10</td>
-            <td><a href="detalles_solicitud.html?solicitud=010">Ver detalles</a></td>
-        </tr>
-        <tr>
-            <td>011</td>
-            <td>2024-05-11</td>
-            <td><a href="detalles_solicitud.html?solicitud=011">Ver detalles</a></td>
-        </tr>
-        <tr>
-            <td>012</td>
-            <td>2024-05-12</td>
-            <td><a href="detalles_solicitud.html?solicitud=012">Ver detalles</a></td>
-        </tr>
-        <tr>
-            <td>013</td>
-            <td>2024-05-13</td>
-            <td><a href="detalles_solicitud.html?solicitud=013">Ver detalles</a></td>
-        </tr>
-        </tbody>
-    </table>
-</section>
+<main>
+    <section>
+        <div id="solicitud_envio">
+            <h2>Solicitudes de envio</h2>
+        </div>
+
+        <div id="solicitud_envio" class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Numero de solicitud</th>
+                    <th>Fecha de envio</th>
+                    <th>Destino</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <%
+                    Connection conexionBD = null;
+                    Statement instruccion = null;
+                    ResultSet resultado = null;
+
+                    try {
+                        // Cargar el controlador
+                        Class.forName("oracle.jdbc.driver.OracleDriver");
+
+                        // Conexión a la base de datos
+                        conexionBD = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "usuarioDB", "contrasenaDB");
+
+                        // Consulta que trae todos los registros de la tabla paquete y formatea la fecha
+                        String query = "SELECT ID, TO_CHAR(fecha, 'YYYY-MM-DD') AS fecha, DIRECCION_ENTREGA FROM paquete";
+                        instruccion = conexionBD.createStatement();
+                        resultado = instruccion.executeQuery(query);
+
+                        // Si existen registros se ejecutan
+                        while (resultado.next()) {
+                            String numeroSolicitud = resultado.getString("ID");
+                            String fechaEnvio = resultado.getString("fecha");
+                            String direccion = resultado.getString("DIRECCION_ENTREGA");
+                %>
+                <tr>
+                    <td><%= numeroSolicitud %></td>
+                    <td><%= fechaEnvio %></td>
+                    <td><%= direccion %></td>
+                    <td><a href="detalles.jsp?id=<%= numeroSolicitud %>">Ver detalles</a></td>
+                </tr>
+                <%
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        try {
+                            if (resultado != null) resultado.close();
+                            if (instruccion != null) instruccion.close();
+                            if (conexionBD != null) conexionBD.close();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                %>
+                </tbody>
+            </table>
+        </div>
+
+
+    </section>
+</main>
 
 <!-- Footer con la información de la empresa -->
 <footer class="footer-container">
@@ -247,4 +256,3 @@
 </footer>
 </body>
 </html>
-

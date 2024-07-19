@@ -106,10 +106,10 @@
         </form>
         <% } else { %>
         <p class="error">El correo electrónico no está registrado.</p>
-        <script>
+        <script>/*
             setTimeout(function () {
                 window.location.href = 'forgot_password.jsp';
-            }, 4000);
+            }, 4000);*/
         </script>
         <% } %>
         <p class="<%= userExists ? "success" : "error" %>"><%= message %>

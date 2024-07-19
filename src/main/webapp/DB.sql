@@ -93,6 +93,7 @@ CREATE TABLE PAQUETE (
     CONSTRAINT FK_REMITENTE FOREIGN KEY (REMITENTE_ID) REFERENCES REMITENTE(ID),
     CONSTRAINT FK_DESTINATARIO FOREIGN KEY (DESTINATARIO_ID) REFERENCES DESTINATARIO(ID)
 );
+ALTER TABLE PAQUETE ADD fecha DATE DEFAULT SYSDATE;
 
 CREATE SEQUENCE PAQUETE_SEQ START WITH 1 INCREMENT BY 1;
 
@@ -165,10 +166,8 @@ CREATE OR REPLACE PROCEDURE INSERTAR_PAQUETE (
     P_ID OUT NUMBER
 ) AS
 BEGIN
-    SELECT
-        PAQUETE_SEQ.NEXTVAL INTO P_ID
-    FROM
-        DUAL;
+    SELECT PAQUETE_SEQ.NEXTVAL INTO P_ID FROM DUAL;
+    
     INSERT INTO PAQUETE (
         ID,
         DESCRIPCION,
@@ -176,7 +175,8 @@ BEGIN
         DIRECCION_RETIRO,
         DIRECCION_ENTREGA,
         REMITENTE_ID,
-        DESTINATARIO_ID
+        DESTINATARIO_ID,
+        fecha
     ) VALUES (
         P_ID,
         P_DESCRIPCION,
@@ -184,7 +184,8 @@ BEGIN
         P_DIRECCION_RETIRO,
         P_DIRECCION_ENTREGA,
         P_REMITENTE_ID,
-        P_DESTINATARIO_ID
+        P_DESTINATARIO_ID,
+        SYSDATE
     );
 END;
 /
@@ -213,3 +214,36 @@ SELECT
     *
 FROM
     COLABORADORES;
+
+DECLARE
+    -- Variables para almacenar nombres de objetos
+    v_seq_name   VARCHAR2(255);
+    v_table_name VARCHAR2(255);
+    v_proc_name  VARCHAR2(255);
+
+BEGIN
+    -- Eliminar secuencias
+    FOR seq IN (SELECT sequence_name FROM user_sequences) LOOP
+        v_seq_name := seq.sequence_name;
+        EXECUTE IMMEDIATE 'DROP SEQUENCE ' || v_seq_name;
+        DBMS_OUTPUT.PUT_LINE('Secuencia ' || v_seq_name || ' eliminada.');
+    END LOOP;
+
+    -- Eliminar tablas
+    FOR tbl IN (SELECT table_name FROM user_tables) LOOP
+        v_table_name := tbl.table_name;
+        EXECUTE IMMEDIATE 'DROP TABLE ' || v_table_name || ' CASCADE CONSTRAINTS';
+        DBMS_OUTPUT.PUT_LINE('Tabla ' || v_table_name || ' eliminada.');
+    END LOOP;
+
+    -- Eliminar procedimientos
+    FOR proc IN (SELECT object_name FROM user_procedures WHERE object_type = 'PROCEDURE') LOOP
+        v_proc_name := proc.object_name;
+        EXECUTE IMMEDIATE 'DROP PROCEDURE ' || v_proc_name;
+        DBMS_OUTPUT.PUT_LINE('Procedimiento ' || v_proc_name || ' eliminado.');
+    END LOOP;
+
+    -- Mensaje final
+    DBMS_OUTPUT.PUT_LINE('Eliminación de secuencias, tablas y procedimientos completada.');
+END;
+/

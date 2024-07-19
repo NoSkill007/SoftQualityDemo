@@ -2,198 +2,222 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseño Web</title>
-    <link rel="stylesheet" href="dise.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-
+    <title>Envíos Panamá</title>
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
+        body {
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            font-size: 62.5%;
-        }
-
-        .container {
-            width: 100%;
-            height: 100vh;
-            background-color: steelblue;
-            font-family: 'Share Tech', sans-serif;
-            min-width: 1200px;
-            position: relative;
-        }
-
-        .logo {
-            font-weight: 600;
-            font-size: 3.8rem;
-        }
-
-        nav {
-            padding: 20px 50px;
+            font-family: Arial, sans-serif;
+            background-color: #002d54;
+            color: white;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        ul li {
-            display: inline-block;
-            list-style: none;
-            padding: 6px 20px;
-            font-weight: 500;
-            font-size: 1.7rem;
-            text-decoration: underline;
-            cursor: pointer;
-            transition: all 0.3s ease 0s;
-        }
-
-        ul li:hover {
-            background-color: #ff4321;
-            border-radius: 25px;
-            text-decoration: none;
+            flex-direction: column;
+            height: 100vh;
         }
 
         header {
-            position: absolute;
-            bottom: 30%;
-            padding: 0 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 50px;
+            background-color: #002d54;
         }
 
-        header h1 {
-            font-size: 7rem;
+        .logo {
+            flex-grow: 1;
+            text-align: center;
         }
 
-        header h2 {
-            font-size: 4rem;
+        .logo img {
+            height: 80px;
         }
 
-        header p {
-            font-size: 1.5rem;
-            margin-top: 20px;
+        .iconos {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .iconos i {
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .iconos i:hover {
+            color: #e4a92f;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        main h1 {
+            font-size: 30px;
             margin-bottom: 20px;
         }
 
-        header button {
-            padding: 0 5px;
-            width: 140px;
-            height: 40px;
-            border: 0;
-            outline: none;
-            color: #fff;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            background-color: #ff4321;
-            border-radius: 25px;
-            transition: width 0.5s;
-        }
-
-        nav img {
+        .buttons {
             display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
         }
 
-        button img {
-            display: none;
-        }
-
-        button:hover img {
-            display: block;
-        }
-
-        header button:hover {
+        .button {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            width: 160px;
-        }
-
-        .buscador {
-            position: relative;
-        }
-
-        .buscador .Lu {
-            position: absolute;
-        }
-
-        input {
-            width: 350px;
-            padding: 10px;
-            padding-right: 35px;
-            border-radius: 5px;
-            border: 0;
-            outline: none;
-        }
-
-        button i {
-            background-color: aqua;
-            padding: 10px 15px;
-            position: absolute;
-            border: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            border-radius: 0 5px 5px 0;
-            color: #fff;
-        }
-
-        .icons {
-            position: absolute;
-            bottom: 8%;
-            padding: 0 50px;
-        }
-
-        .icons i {
-            font-size: 2.5rem;
-            padding: 0 10px;
-            cursor: pointer;
-        }
-
-        .icons i:hover {
-            color: #ff4321;
-            transition: all 0.3s ease 0s;
-        }
-
-        a {
-            color: black;
             text-decoration: none;
+            background-color: white;
+            color: #002d54;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            transition: background-color 0.3s;
+            font-size: 18px;
+        }
+
+        .button-text {
+            font-size: 24px; /* Cambiar el tamaño de fuente aquí */
+        }
+
+
+        .button:hover {
+            background-color: #e4a92f;
+        }
+
+        .button img {
+            height: 120px;
+            margin-bottom: 20px; /* Aumenta el valor para más separación */
+        }
+
+        .footer-container {
+            background-color: #002d54;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            margin: 0 50px;
+        }
+
+        .footer-heading {
+            border-bottom: 1px solid #aaa;
+            padding-bottom: 5px;
+        }
+
+        .branch-schedule,
+        .contact-info {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .schedule-item,
+        .contact-item {
+            margin-bottom: 5px;
+        }
+
+        .social-icon {
+            text-align: left;
+            margin: 0 5px;
+        }
+
+        .social-icon img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .background-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            opacity: 0.1;
+        }
+
+        .background-elements img {
+            width: 150px;
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <nav>
-        <span class="logo">eSuply Solutions</span>
-        <ul>
-            <li><a href="Solicitud_envio.html" class="nav-link">SOLICITAR ENVÍO</a></li>
-            <li><a href="src/Integrantes.html" class="nav-link">CONTÁCTANOS</a></li>
-        </ul>
-    </nav>
-    <nav class="buscador">
-        <input type="text" placeholder="Buscar...">
-        <button type="busc"><img class="Lu" src="icono/Lupa.svg"></button>
-    </nav>
-    <header>
-        <h1>BIENVENIDOS</h1>
-        <h2>Somos eSuply Solutions</h2>
-        <p>La empresa de envíos 24h más grande en Panamá <br> certificados con la UNE-ISO/PAS 45005 y la ISO 9001, para
-            así garantizar la calidad y eficiencia de nuestras entregas.</constantemente></p>
-        <button type="button">
-            Mas Información
-            <img src="icono/Flech.svg" alt="">
-        </button>
-    </header>
-    <div class="icons">
-        <i class='bx bxl-invision'></i>
-        <i class='bx bxl-dropbox'></i>
-        <i class='bx bxl-linkedin'></i>
-    </div>
+<div class="background-elements">
+    <img src="img/rocket.png" alt="Rocket">
+    <img src="img/rocket.png" alt="Rocket">
+    <img src="img/rocket.png" alt="Rocket">
+    <img src="img/rocket.png" alt="Rocket">
+    <img src="img/rocket.png" alt="Rocket">
 </div>
+<header>
+    <div class="logo">
+        <img src="img/Logo.png" alt="Envíos Panamá">
+    </div>
+    <div class="iconos">
+        <i class="fas fa-bell"></i>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-cog"></i>
+    </div>
+</header>
+<main>
+    <h1>Envíos rápidos y seguros</h1>
+    <div class="buttons">
+        <a href="Solicitud_envio.html" class="button">
+            <img src="img/shipment.png" alt="Solicitar Envío">
+            <span class="button-text">Solicitar Envío</span>
+        </a>
+        <a href="#" class="button">
+            <img src="img/state.png" alt="Ver Estado">
+            <span class="button-text">Ver Estado</span>
+        </a>
+        <a href="#" class="button">
+            <img src="img/claim.png" alt="Reclamos">
+            <span class="button-text">Reclamos</span>
+        </a>
+    </div>
+</main>
+<footer class="footer-container">
+    <div class="footer-section">
+        <h2 class="footer-heading">SUCURSALES</h2>
+        <ul class="branch-schedule">
+            <li class="schedule-item">El dorado: lunes a viernes: 8:00 am - 8:00 pm</li>
+            <li class="schedule-item">sábado: 8:00 am - 6:00 pm</li>
+            <li class="schedule-item">Nuevo tocumen: lunes a viernes: 9:30 am - 5:00 pm</li>
+            <li class="schedule-item">sábado: 10:00 am - 4:00 pm</li>
+            <li class="schedule-item">Arraiján: lunes a viernes: 9:30 am - 6:00 pm</li>
+            <li class="schedule-item">sábado: 9:30 am - 4:00 pm</li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h2 class="footer-heading">CONTACTO</h2>
+        <ul class="contact-info">
+            <li class="contact-item">El dorado: XXXX-XXXX</li>
+            <li class="contact-item">Arraijan: XXXX-XXXX</li>
+            <li class="contact-item">Nuevo tocumen: XXXX-XXXX</li>
+        </ul>
+        <div class="social-icons">
+            <a href="#" class="social-icon"><img src="img/tik_tok@512px.png" alt="TikTok"></a>
+            <a href="#" class="social-icon"><img src="img/linkedin@512px.png" alt="Linkedin"></a>
+            <a href="#" class="social-icon"><img src="img/instagram@512px.png" alt="Instagram"></a>
+            <a href="#" class="social-icon"><img src="img/facebook@512px.png" alt="Facebook"></a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

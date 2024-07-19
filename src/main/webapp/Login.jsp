@@ -72,6 +72,7 @@
         <p class="<%= success ? "success" : "error" %>"><%= message %>
         </p>
         <script>
+
             setTimeout(function () {
                 if (<%= success %>) {
                     window.location.href = '<%= userType.equals("cliente") ? "Pantalla_Cliente.html" : "inicio_recepcionista.html" %>';
